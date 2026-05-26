@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "Squ4ttro Motors",
+    "slug": "squ4ttro-motors",
+    "scheme": "squ4ttro",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "bundleIdentifier": "br.com.squ4ttromotors.app",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "br.com.squ4ttromotors.app"
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
