@@ -12,6 +12,25 @@ http://app.revendamais.com.br/application/index.php/apiGeneratorXml/generator/si
 
 Esse feed alimenta marca, modelo, ano, km, preco, cambio, combustivel, loja, endereco, opcionais e fotos. Como o feed esta em HTTP, `app.json` inclui excecao de trafego claro para `app.revendamais.com.br` em iOS e Android. Para publicacao final, o melhor caminho e expor esse mesmo estoque por uma API/cache HTTPS propria.
 
+## Grafo atual
+
+```mermaid
+flowchart TD
+  A["CRM Revenda Mais"] --> B["Feed XML oficial"]
+  B --> C["src/inventory.js"]
+  C --> D["Parser XML e normalizacao"]
+  D --> E["App Expo iOS/Android"]
+  E --> F["Tela de estoque"]
+  E --> G["Detalhes do veiculo"]
+  E --> H["Contato das unidades"]
+  F --> I["Busca por marca/modelo"]
+  G --> J["WhatsApp por loja"]
+  G --> K["Ligacao telefonica"]
+  H --> L["WhatsApp, telefone, mapa e site"]
+  B -. "HTTP atual" .-> M["Excecao em app.json"]
+  N["API/cache HTTPS propria"] -. "proxima etapa" .-> C
+```
+
 ## Rodar localmente
 
 ```bash
